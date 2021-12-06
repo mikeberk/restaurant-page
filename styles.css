@@ -1,0 +1,142 @@
+/*
+Bone
+#E2D2C1
+
+Fuzzy Wuzzy Brown
+#C4595E
+
+Turmeric
+#CAB248
+
+Flint
+#716D62
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #E2D2C1;
+}
+
+.tab-bar {
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #CAB248;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+h1, .tab-div, .spacer {
+    flex: 1;
+}
+
+.content {
+    background-color: #E2D2C1;
+}
+
+h2 {
+    color: #CAB248;
+    padding-top: 75px;
+}
+
+.tab-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+button {
+    border: none;
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    background-color: #CAB248;
+}
+
+button:focus, 
+button:hover {
+    text-decoration: underline;
+    color: #716D62;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shop-img {
+    width: 100%;
+    margin-top: 0;
+    opacity: 0.7;
+}
+
+.image-div {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.hero-img {
+    align-self: flex-start;
+}
+
+.kalita-img {
+    align-self: flex-end;
+}
+
+.sur-img {
+    align-self: flex-start;
+}
+
+p, img {
+    margin: 10px;
+}
+
+.container > h1 {
+    align-self: flex-start;
+    margin-bottom: 80px;
+}
+
+img {
+    box-shadow: 3px 3px 3px lightgray;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+    max-width: 800px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    transform: scale(0);
+    transition: 0.2s ease-in;
+    background-color: #E2D2C1;
+    color: #C4595E;
+}
+
+.animate {
+    transform: scale(1);
+}

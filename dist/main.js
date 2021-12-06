@@ -16,7 +16,17 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"content\": () => (/* binding */ content)\n/* harmony export */ });\n/* harmony import */ var _page_load__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-load */ \"./src/page-load.js\");\n\n\nconst content = document.getElementById('content');\n\n(0,_page_load__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"content\": () => (/* binding */ content)\n/* harmony export */ });\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _page_load__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-load */ \"./src/page-load.js\");\n/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities */ \"./src/utilities.js\");\n\n\n\n\nconst pageContent = document.getElementById('content');\nconst tabBar = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('div', null, 'tab-bar');\nconst pageTitle = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('h1', `Roy Donk's Haus of Coffee`);\nconst tabDiv = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('div', null, 'tab-div');\nconst spacer = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('div', null, 'spacer');\nconst homeBtn = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('button', 'Home');\nconst menuBtn = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('button', 'Menu');\nconst content = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('div', null, 'content');\n\ntabBar.appendChild(pageTitle);\ntabBar.appendChild(tabDiv);\ntabDiv.appendChild(homeBtn);\ntabDiv.appendChild(menuBtn);\ntabBar.appendChild(spacer);\npageContent.appendChild(tabBar);\npageContent.appendChild(content);\n\n(0,_page_load__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\nmenuBtn.addEventListener('click', _menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\nhomeBtn.addEventListener('click', _page_load__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/menu.js":
+/*!*********************!*\
+  !*** ./src/menu.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ \"./src/index.js\");\n/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilities */ \"./src/utilities.js\");\n/* harmony import */ var _kalita_wave_jpeg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./kalita-wave.jpeg */ \"./src/kalita-wave.jpeg\");\n/* harmony import */ var _page_load__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./page-load */ \"./src/page-load.js\");\n\n\n\n\n\nconst menuLoad = () => {\n    const menuDiv = (0,_utilities__WEBPACK_IMPORTED_MODULE_1__.createHtmlElement)('div', null, 'container');\n\n    const menuHeader = (0,_utilities__WEBPACK_IMPORTED_MODULE_1__.createHtmlElement)('h2', 'MENU');\n    const menuItems = (0,_utilities__WEBPACK_IMPORTED_MODULE_1__.createHtmlElement)('div', null, 'menu-items');\n\n    // create a new menu card item\n    function createMenuItem(itemName, description, cost) {\n        let menuItem = (0,_utilities__WEBPACK_IMPORTED_MODULE_1__.createHtmlElement)('div', null, 'menu-item');\n        let itemTitle = (0,_utilities__WEBPACK_IMPORTED_MODULE_1__.createHtmlElement)('h3', itemName, 'menu-item-title');\n        let itemDescription = (0,_utilities__WEBPACK_IMPORTED_MODULE_1__.createHtmlElement)('p', description, 'menu-item-desc');\n        let itemCost = (0,_utilities__WEBPACK_IMPORTED_MODULE_1__.createHtmlElement)('p', '$' + cost, 'menu-item-cost');\n\n        menuItem.appendChild(itemTitle);\n        menuItem.appendChild(itemDescription);\n        menuItem.appendChild(itemCost);\n\n        return menuItem;\n    }\n\n    // array to store menu elements\n    let menuArr = [];\n\n    const espresso = createMenuItem('Espresso', 'A double shot of espresso', '3');\n    const cap = createMenuItem('Cappuccino', 'Espresso + milk. Whole milk or oat milk avaliable', '4');\n    const latte = createMenuItem('Latte', 'Espresso + milk. Whole milk or oat milk avaliable. Served hot or iced', '4');\n    const hcLatte = createMenuItem('Honey Cardamom Latte', 'Espresso + milk with a house made honey cardamom syrup. Whole milk or oat milk avaliable. Served hot or iced', '5');\n    const matchaLatte = createMenuItem('Matcha Latte', 'Matcha + milk. Whole milk or oat milk avaliable. Served hot or iced', '4');\n    const pourOver = createMenuItem('Pourover', 'Any of our single origin roasts brewed with a Kalita wave', '5');\n    \n    menuDiv.appendChild(menuHeader);\n    menuDiv.appendChild(menuItems);\n\n    menuArr.push(espresso);\n    menuArr.push(cap);\n    menuArr.push(latte);\n    menuArr.push(hcLatte);\n    menuArr.push(matchaLatte);\n    menuArr.push(pourOver);\n\n    // add menu items to div and add animation class\n    function addMenuItem (element, index) {\n        menuItems.appendChild(element);\n        setTimeout(() => element.classList.add(\"animate\"), index * 100);\n    }\n\n    menuArr.forEach(addMenuItem);\n\n    /*\n    menuItems.appendChild(espresso);\n    menuItems.appendChild(cap);\n    menuItems.appendChild(latte);\n    menuItems.appendChild(hcLatte);\n    menuItems.appendChild(matchaLatte);\n    menuItems.appendChild(pourOver);\n    */\n    if (_index__WEBPACK_IMPORTED_MODULE_0__.content.firstChild) {\n        _index__WEBPACK_IMPORTED_MODULE_0__.content.removeChild(_index__WEBPACK_IMPORTED_MODULE_0__.content.firstChild)\n    }\n    _index__WEBPACK_IMPORTED_MODULE_0__.content.appendChild(menuDiv);\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menuLoad);\n\n//# sourceURL=webpack://restaurant-page/./src/menu.js?");
 
 /***/ }),
 
@@ -26,7 +36,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ \"./src/index.js\");\n/* harmony import */ var _coffee_house_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./coffee-house.jpeg */ \"./src/coffee-house.jpeg\");\n\n\n\nconst pageLoad = () => {\n    const element = document.createElement('div');\n\n    const header = document.createElement('h1');\n    header.textContent = `Roy Donk's Haus of Coffee`;\n    \n    const heroImage = new Image();\n    heroImage.src = _coffee_house_jpeg__WEBPACK_IMPORTED_MODULE_1__;\n\n    const para = document.createElement('p');\n    para.textContent = `The tastiest coffee this side of the Colgate Comedy Hour. Come visit us at the corner of Doumar and 1st.`\n\n    element.appendChild(header);\n    element.appendChild(heroImage);\n    element.appendChild(para);\n\n    _index__WEBPACK_IMPORTED_MODULE_0__.content.appendChild(element);\n    \n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageLoad);\n\n\n//# sourceURL=webpack://restaurant-page/./src/page-load.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ \"./src/index.js\");\n/* harmony import */ var _coffee_house_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./coffee-house.jpeg */ \"./src/coffee-house.jpeg\");\n/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities */ \"./src/utilities.js\");\n/* harmony import */ var _kalita_wave_jpeg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./kalita-wave.jpeg */ \"./src/kalita-wave.jpeg\");\n/* harmony import */ var _coffee_sur_jpeg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./coffee-sur.jpeg */ \"./src/coffee-sur.jpeg\");\n/* harmony import */ var _shop_jpeg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shop.jpeg */ \"./src/shop.jpeg\");\n\n\n\n\n\n\n\nconst pageLoad = () => {\n    const element = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('div', null, 'container');\n    const imgDiv = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('div', null, 'image-div');\n\n    const shopImage = new Image();\n    shopImage.src = _shop_jpeg__WEBPACK_IMPORTED_MODULE_5__;\n    shopImage.classList.add(\"shop-img\");\n\n    const heroImage = new Image();\n    heroImage.src = _coffee_house_jpeg__WEBPACK_IMPORTED_MODULE_1__;\n    heroImage.classList.add(\"hero-img\");\n\n    const kalitaImage = new Image();\n    kalitaImage.src = _kalita_wave_jpeg__WEBPACK_IMPORTED_MODULE_3__;\n    kalitaImage.classList.add(\"kalita-img\");\n\n    const surImage = new Image();\n    surImage.src = _coffee_sur_jpeg__WEBPACK_IMPORTED_MODULE_4__;\n    surImage.classList.add(\"sur-img\");\n\n\n    const para = (0,_utilities__WEBPACK_IMPORTED_MODULE_2__.createHtmlElement)('p', `The tastiest coffee this side of the Colgate Comedy Hour. Come visit us at the corner of Doumar and 1st.`);\n\n    element.appendChild(shopImage);\n    element.appendChild(imgDiv);\n    imgDiv.appendChild(heroImage);\n    imgDiv.appendChild(kalitaImage);\n    imgDiv.appendChild(surImage);\n    element.appendChild(para);\n\n\n    if (_index__WEBPACK_IMPORTED_MODULE_0__.content.firstChild) {\n        // change this due to listener being on main js file\n        _index__WEBPACK_IMPORTED_MODULE_0__.content.removeChild(_index__WEBPACK_IMPORTED_MODULE_0__.content.firstChild)\n    }\n    _index__WEBPACK_IMPORTED_MODULE_0__.content.appendChild(element);\n    // menuBtn.addEventListener('click', menuLoad);\n    \n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageLoad);\n\n\n//# sourceURL=webpack://restaurant-page/./src/page-load.js?");
+
+/***/ }),
+
+/***/ "./src/utilities.js":
+/*!**************************!*\
+  !*** ./src/utilities.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createHtmlElement\": () => (/* binding */ createHtmlElement)\n/* harmony export */ });\nconst createHtmlElement = (tag, text, className) => {\n    let newElement = document.createElement(tag);\n    if (text) {\n        newElement.textContent = text;\n    }\n    if (className) {\n        newElement.classList.add(className);\n    }\n    return newElement;\n}\n\n\n\n//# sourceURL=webpack://restaurant-page/./src/utilities.js?");
 
 /***/ }),
 
@@ -37,6 +57,36 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__.p + \"eecb314632fd00c48f36.jpeg\";\n\n//# sourceURL=webpack://restaurant-page/./src/coffee-house.jpeg?");
+
+/***/ }),
+
+/***/ "./src/coffee-sur.jpeg":
+/*!*****************************!*\
+  !*** ./src/coffee-sur.jpeg ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"43a2a4faff292d219955.jpeg\";\n\n//# sourceURL=webpack://restaurant-page/./src/coffee-sur.jpeg?");
+
+/***/ }),
+
+/***/ "./src/kalita-wave.jpeg":
+/*!******************************!*\
+  !*** ./src/kalita-wave.jpeg ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"86351a835cea9e8fd98b.jpeg\";\n\n//# sourceURL=webpack://restaurant-page/./src/kalita-wave.jpeg?");
+
+/***/ }),
+
+/***/ "./src/shop.jpeg":
+/*!***********************!*\
+  !*** ./src/shop.jpeg ***!
+  \***********************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"414044cdbfe19f553307.jpeg\";\n\n//# sourceURL=webpack://restaurant-page/./src/shop.jpeg?");
 
 /***/ })
 

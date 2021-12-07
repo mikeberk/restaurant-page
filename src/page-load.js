@@ -3,11 +3,12 @@ import mainImage from './coffee-house.jpeg';
 import { createHtmlElement } from './utilities';
 import kalita from './kalita-wave.jpeg';
 import sur from './coffee-sur.jpeg';
-import shop from './shop.jpeg';
+import shop from './shop.png';
 
 const pageLoad = () => {
     const element = createHtmlElement('div', null, 'container');
     const imgDiv = createHtmlElement('div', null, 'image-div');
+    const shopContainer = createHtmlElement('div', null, 'shop-container');
 
     const shopImage = new Image();
     shopImage.src = shop;
@@ -28,12 +29,13 @@ const pageLoad = () => {
 
     const para = createHtmlElement('p', `The tastiest coffee this side of the Colgate Comedy Hour. Come visit us at the corner of Doumar and 1st.`);
 
-    element.appendChild(shopImage);
+    element.appendChild(shopContainer);
+    shopContainer.appendChild(shopImage);
+    shopContainer.appendChild(para);
     element.appendChild(imgDiv);
     imgDiv.appendChild(heroImage);
     imgDiv.appendChild(kalitaImage);
     imgDiv.appendChild(surImage);
-    element.appendChild(para);
 
 
     if (content.firstChild) {

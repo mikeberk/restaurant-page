@@ -1,7 +1,5 @@
 import { content } from './index';
 import { createHtmlElement } from './utilities';
-import kalitaImage from './kalita-wave.jpeg';
-import pageLoad from './page-load';
 
 const menuLoad = () => {
     const menuDiv = createHtmlElement('div', null, 'container');
